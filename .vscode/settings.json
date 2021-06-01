@@ -1,0 +1,4 @@
+{
+    "eslint.nodePath": ".yarn/sdks/eslint/lib",
+    "typescript.tsdk": ".yarn/sdks/typescript/lib"
+}
