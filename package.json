@@ -7,8 +7,10 @@
   },
   "devDependencies": {
     "@types/node": "^15.6.1",
+    "@types/react": "^17.0.8",
     "@typescript-eslint/eslint-plugin": "^4.26.0",
     "@typescript-eslint/parser": "^4.26.0",
+    "@yarnpkg/pnpify": "^3.0.0-rc.3",
     "eslint": "^7.27.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-plugin-import": "^2.23.4",
