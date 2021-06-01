@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/NJohnsonJ/react-uikit/issues"
   },
-  "homepage": "https://github.com/NJohnsonJ/react-uikit#readme"
+  "homepage": "https://github.com/NJohnsonJ/react-uikit#readme",
+  "devDependencies": {
+    "uikit": "^3.6.22"
+  }
 }
