@@ -1,6 +1,6 @@
 import React, { HTMLAttributes, HTMLProps } from "react";
 
-interface AlertButtonProps extends HTMLAttributes<HTMLAnchorElement | HTMLButtonElement> {
+export interface AlertButtonProps extends HTMLAttributes<HTMLAnchorElement | HTMLButtonElement> {
     as?: "a" | "button"
 } 
 

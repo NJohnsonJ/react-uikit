@@ -2,7 +2,7 @@ import React from "react";
 import { ukConfig } from "./util";
 import AlertButton from "./AlertButton";
 
-interface AlertProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface AlertProps extends React.HTMLAttributes<HTMLDivElement> {
     animation?: boolean;
     duration?: number;
     variant?: "primary" | "success" | "warning" | "danger"
