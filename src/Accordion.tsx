@@ -41,4 +41,4 @@ const Accordion = React.forwardRef<HTMLUListElement, AccordionProps>((props, ref
 
 export default Object.assign(Accordion, {
     Content: AccordionContent
-}
+})

@@ -8,7 +8,7 @@ const AccordionContent = (props: AccordionContentProps) => {
     return (
         <li>
             <a className="uk-accordion-title" href="#">{title}</a>
-            <div className="uk-acccordion-content">
+            <div className="uk-accordion-content">
                 {props.children}
             </div>
         </li>
