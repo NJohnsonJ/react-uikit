@@ -26,7 +26,10 @@ const Template: Story<ComponentProps<typeof Accordion>> = (args) => (
 export const Example = Template.bind({});
 
 Example.args = {
-    active: 1,
+    active: 0,
+    animation: true,
     collapsible: true,
-    
+    duration: 200,
+    multiple: false,
+    transition: "ease"
 }
