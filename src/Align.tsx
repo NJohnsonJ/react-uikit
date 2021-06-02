@@ -1,13 +1,14 @@
 import React, { HTMLAttributes } from "react";
 
 export type Alignment = "left" | "right" | "center";
+export type ResponsiveAlignment = "left" | "right"
 
 export interface AlignProps extends HTMLAttributes<HTMLElement> {
     alignment: Alignment;
-    s?: Alignment;
-    m?: Alignment;
-    l?: Alignment;
-    xl?: Alignment;
+    s?: ResponsiveAlignment;
+    m?: ResponsiveAlignment;
+    l?: ResponsiveAlignment;
+    xl?: ResponsiveAlignment;
 }
 
 const baseClassName = "uk-align";
