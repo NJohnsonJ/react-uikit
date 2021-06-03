@@ -13,7 +13,7 @@ export default {
 const Template: Story<ComponentProps<typeof Animation>> = (args) => (
     <Animation.Hover>
         <Animation {...args}>
-            <img src="https://cdn.pixabay.com/photo/2020/12/14/11/18/cat-5830643_960_720.jpg"/>
+            <img style={{width: "100%"}} src="https://cdn.pixabay.com/photo/2020/12/14/11/18/cat-5830643_960_720.jpg"/>
         </Animation>
     </Animation.Hover>
 )

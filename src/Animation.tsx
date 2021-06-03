@@ -21,7 +21,15 @@ export type AnimationType = "fade"
     | "stroke"
     ;
 
-export type TransformOrigin = "bottom-right" | "top-center" | "bottom-center";
+export type TransformOrigin = "top-left"
+    | "top-center"
+    | "top-right"
+    | "center-left"
+    | "center-right"
+    | "bottom-left"
+    | "bottom-center"
+    | "bottom-right"
+    ;
 
 interface AnimationProps extends HTMLAttributes<HTMLDivElement> {
     type: AnimationType,
@@ -29,7 +37,6 @@ interface AnimationProps extends HTMLAttributes<HTMLDivElement> {
     fast?: boolean,
     // The origin prop only has an effect when the type is one of the scale animations.
     origin?: TransformOrigin,
-
 }
 
 const classNamePrefix = "uk-animation"
@@ -38,7 +45,11 @@ function getClassName(name: string) {
     return `${classNamePrefix}-${name}`;
 }
 
-function getClassNames(type: string, reverse: boolean, fast: boolean) {
+function getOriginClassName(origin: string) {
+    return `uk-transform-origin-${origin}`;
+}
+
+function getClassNames(type: string, reverse: boolean, fast: boolean, origin: string) {
 
     const classNames = [type];
 
@@ -47,11 +58,13 @@ function getClassNames(type: string, reverse: boolean, fast: boolean) {
     }
 
     if (fast) {
-        classNames.push("fast")
+        classNames.push("fast");
     }
 
-    return classNames.map(name => getClassName(name))
+    const baseClasses = classNames.map(name => getClassName(name))
         .reduce((prev, curr) => `${prev} ${curr}`);
+
+    return `${baseClasses} ${getOriginClassName(origin)}`;
 }
 
 const Animation = React.forwardRef<HTMLDivElement, AnimationProps>((props, ref) => {
@@ -66,7 +79,7 @@ const Animation = React.forwardRef<HTMLDivElement, AnimationProps>((props, ref) 
     } = props;
 
     return (
-        <div className={getClassNames(type, reverse, fast)} ref={ref} {...other}>
+        <div className={getClassNames(type, reverse, fast, origin)} ref={ref} {...other}>
             {children}
         </div>
     )
