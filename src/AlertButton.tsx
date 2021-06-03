@@ -1,20 +1,18 @@
-import React, { HTMLAttributes, HTMLProps } from "react";
+import React, { HTMLAttributes } from "react";
 
 export interface AlertButtonProps extends HTMLAttributes<HTMLAnchorElement | HTMLButtonElement> {
-    as?: "a" | "button"
 } 
 
 const AlertButton = React.forwardRef<HTMLAnchorElement, AlertButtonProps>((props, ref) => {
     const {
-        as: Component = "a",
         children,
         ...other
     } = props;
 
     return (
-        <Component className="uk-alert-close" uk-close="" {...other}>
+        <a className="uk-alert-close" uk-close="" ref={ref} {...other}>
             {children}
-        </Component>
+        </a>
     )
 });
 

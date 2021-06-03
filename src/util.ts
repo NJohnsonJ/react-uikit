@@ -1,5 +1,3 @@
-import React from "react";
-
 type ConfigProps = Record<string, any>;
 
 export function ukConfig(props: ConfigProps): string {
@@ -11,8 +9,4 @@ export function ukConfig(props: ConfigProps): string {
         return configs.reduce((prev, curr) => `${prev}; ${curr}`);
 
     return "";
-}
-
-export interface UKProps<ComponentType extends React.ElementType = React.ElementType> {
-    Component?: ComponentType
 }

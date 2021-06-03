@@ -2,6 +2,8 @@ import React from "react";
 import { ukConfig } from "./util";
 import AccordionContent from "./AccordionContent";
 
+export type Transition = "ease" | "ease-in" | "ease-in-out" | "ease-out";
+
 export interface AccordionProps extends React.HTMLAttributes<HTMLUListElement> {
     active?: number;
     animation?: boolean;
@@ -11,7 +13,7 @@ export interface AccordionProps extends React.HTMLAttributes<HTMLUListElement> {
     multiple?: boolean;
     targets?: string;
     toggle?: string;
-    transition?: string;
+    transition?: Transition;
     offset?: number;
 }
 
