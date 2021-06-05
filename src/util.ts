@@ -10,3 +10,11 @@ export function ukConfig(props: ConfigProps): string {
 
     return "";
 }
+
+export function className(prefix: string, name?: string) {
+    return name ? `uk-${prefix}-${name}` : "";
+}
+
+export function toClassName(classNames: string[]) {
+    return classNames.reduce((prev, curr) => `${prev} ${curr}`, "");
+}
