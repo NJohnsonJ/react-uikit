@@ -18,9 +18,7 @@ export type AnimationType = "fade"
     | "slide-left-medium"
     | "kenburns"
     | "shake"
-    | "stroke"
-    ;
-
+    | "stroke";
 export type TransformOrigin = "top-left"
     | "top-center"
     | "top-right"
@@ -28,9 +26,7 @@ export type TransformOrigin = "top-left"
     | "center-right"
     | "bottom-left"
     | "bottom-center"
-    | "bottom-right"
-    ;
-
+    | "bottom-right";
 interface AnimationProps extends HTMLAttributes<HTMLDivElement> {
     type: AnimationType,
     reverse?: boolean,
@@ -39,52 +35,50 @@ interface AnimationProps extends HTMLAttributes<HTMLDivElement> {
     origin?: TransformOrigin,
 }
 
-const classNamePrefix = "uk-animation"
+const classNamePrefix = "uk-animation";
 
 function getClassName(name: string) {
-    return `${classNamePrefix}-${name}`;
+  return `${classNamePrefix}-${name}`;
 }
 
 function getOriginClassName(origin: string) {
-    return `uk-transform-origin-${origin}`;
+  return `uk-transform-origin-${origin}`;
 }
 
 function getClassNames(type: string, reverse: boolean, fast: boolean, origin: string) {
+  const classNames = [type];
 
-    const classNames = [type];
+  if (reverse) {
+    classNames.push("reverse");
+  }
 
-    if (reverse) {
-        classNames.push("reverse");
-    }
+  if (fast) {
+    classNames.push("fast");
+  }
 
-    if (fast) {
-        classNames.push("fast");
-    }
+  const baseClasses = classNames.map((name) => getClassName(name))
+    .reduce((prev, curr) => `${prev} ${curr}`);
 
-    const baseClasses = classNames.map(name => getClassName(name))
-        .reduce((prev, curr) => `${prev} ${curr}`);
-
-    return `${baseClasses} ${getOriginClassName(origin)}`;
+  return `${baseClasses} ${getOriginClassName(origin)}`;
 }
 
 const Animation = React.forwardRef<HTMLDivElement, AnimationProps>((props, ref) => {
+  const {
+    type,
+    reverse = false,
+    fast = false,
+    origin,
+    children,
+    ...other
+  } = props;
 
-    const {
-        type,
-        reverse = false,
-        fast = false,
-        origin,
-        children,
-        ...other
-    } = props;
-
-    return (
-        <div className={getClassNames(type, reverse, fast, origin)} ref={ref} {...other}>
-            {children}
-        </div>
-    )
+  return (
+    <div className={getClassNames(type, reverse, fast, origin)} ref={ref} {...other}>
+      {children}
+    </div>
+  );
 });
 
 export default Object.assign(Animation, {
-    Hover: AnimationHover
+  Hover: AnimationHover,
 });

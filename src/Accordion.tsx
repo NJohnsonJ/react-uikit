@@ -18,29 +18,32 @@ export interface AccordionProps extends React.HTMLAttributes<HTMLUListElement> {
 }
 
 const Accordion = React.forwardRef<HTMLUListElement, AccordionProps>((props, ref) => {
-    const { 
-        active,
-        animation,
-        collapsible,
-        content,
-        duration,
-        multiple,
-        targets,
-        toggle,
-        transition,
-        offset,
-        children,
-        ...otherProps
-    } = props;
+  const {
+    active,
+    animation,
+    collapsible,
+    content,
+    duration,
+    multiple,
+    targets,
+    toggle,
+    transition,
+    offset,
+    children,
+    ...otherProps
+  } = props;
 
-    const accordionConfig = ukConfig({active, animation, collapsible, content, duration, multiple, targets, toggle, transition, offset});
+  const accordionConfig = ukConfig({
+    active, animation, collapsible, content, duration, multiple, targets, toggle, transition, offset,
+  });
 
-    return (
+  return (
     <ul uk-accordion={accordionConfig} ref={ref} {...otherProps}>
-        {children}
+      {children}
     </ul>
-)})
+  );
+});
 
 export default Object.assign(Accordion, {
-    Content: AccordionContent
-})
+  Content: AccordionContent,
+});

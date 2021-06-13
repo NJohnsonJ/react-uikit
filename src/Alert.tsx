@@ -9,25 +9,24 @@ export interface AlertProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
+  const {
+    animation,
+    duration,
+    variant,
+    ...other
+  } = props;
 
-    const {
-        animation,
-        duration,
-        variant,
-        ...other
-    } = props;
+  const alertConfig = ukConfig({ animation, duration, variant });
 
-    const alertConfig = ukConfig({animation, duration, variant})
+  const styledClass = variant ? `uk-alert-${variant}` : "";
 
-    const styledClass = variant ? `uk-alert-${variant}` : "";
-
-    return (
-        <div uk-alert={alertConfig} ref={ref} {...other} className={styledClass}>
-            {props.children}
-        </div>
-    );
-})
+  return (
+    <div uk-alert={alertConfig} ref={ref} {...other} className={styledClass}>
+      {props.children}
+    </div>
+  );
+});
 
 export default Object.assign(Alert, {
-    Button: AlertButton
+  Button: AlertButton,
 });

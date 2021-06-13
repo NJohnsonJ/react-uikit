@@ -1,22 +1,21 @@
 type ConfigProps = Record<string, any>;
 
 export function ukConfig(props: ConfigProps): string {
-    const configs = Object.entries(props)
-        .filter(([, value]) => value !== undefined)
-        .map(([key, value]) => `${key}: ${value}`);
+  const configs = Object.entries(props)
+    .filter(([, value]) => value !== undefined)
+    .map(([key, value]) => `${key}: ${value}`);
 
-    if (configs.length)
-        return configs.reduce((prev, curr) => `${prev}; ${curr}`);
+  if (configs.length) return configs.reduce((prev, curr) => `${prev}; ${curr}`);
 
-    return "";
+  return "";
 }
 
 export function className(prefix: string, name?: string) {
-    return name ? `uk-${prefix}-${name}` : "";
+  return name ? `uk-${prefix}-${name}` : "";
 }
 
 export function toClassName(classNames: string[]) {
-    return classNames
-        .filter(it => it.length)
-        .reduce((prev, curr) => `${prev} ${curr}`, "");
+  return classNames
+    .filter((it) => it.length)
+    .reduce((prev, curr) => `${prev} ${curr}`, "");
 }
