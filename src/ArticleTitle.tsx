@@ -1,6 +1,6 @@
 import React, { HTMLAttributes } from "react";
 
-interface ArticleTitleProps extends HTMLAttributes<HTMLHeadingElement> {
+export interface ArticleTitleProps extends HTMLAttributes<HTMLHeadingElement> {
 }
 
 const ArticleTitle = React.forwardRef<HTMLHeadingElement, ArticleTitleProps>(({ children, ...other }, ref) => (

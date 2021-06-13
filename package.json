@@ -16,7 +16,7 @@
     "@types/node": "^15.6.1",
     "@types/react": "^17.0.8",
     "@typescript-eslint/eslint-plugin": "4.0.1",
-    "@typescript-eslint/parser": "4.0.1",
+    "@typescript-eslint/parser": "4.0.0",
     "@yarnpkg/pnpify": "^3.0.0-rc.3",
     "babel-loader": "^8.2.2",
     "eslint": "^7.27.0",
@@ -35,6 +35,8 @@
   },
   "scripts": {
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "lint": "eslint src/*",
+    "lint:fix": "eslint src/* --fix"
   }
 }

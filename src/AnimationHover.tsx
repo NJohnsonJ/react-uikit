@@ -1,6 +1,6 @@
 import React from "react";
 
-interface AnimationHoverProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface AnimationHoverProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 const AnimationHover = React.forwardRef<HTMLDivElement, AnimationHoverProps>((props, ref) => {

@@ -15,7 +15,22 @@ plugins:
   - react
   - '@typescript-eslint'
 rules: 
-  quotes: ["error", "double"]
+  quotes: 
+    - error
+    - double
   react/jsx-filename-extension: off
   import/prefer-default-import: off
-    
+  react/jsx-props-no-spreading: off
+  react/prop-types: 1
+  import/extensions: off
+  max-len: 
+    - warn
+    - code: 140
+settings:
+  import/resolver:
+    node:
+      extensions:
+        - .js
+        - .jsx
+        - .ts
+        - .tsx

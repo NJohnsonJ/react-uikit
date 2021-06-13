@@ -2,23 +2,19 @@ import React, { HTMLAttributes } from "react";
 import { TransformOrigin } from "./Animation";
 import { className, toClassName } from "./util";
 
-type BackgroundColor = "default"
+export type BackgroundColor = "default"
     | "muted"
     | "primary"
-    | "secondary"
-    ;
-
-type BackgroundSize = "cover"
+    | "secondary";
+export type BackgroundSize = "cover"
     | "contain"
     | "fill-width"
-    | "fill-height"
-    ;
+    | "fill-height";
+export type Position = TransformOrigin | "center-center";
 
-type Position = TransformOrigin | "center-center";
+export type ResponsiveSize = "s" | "m" | "l" | "xl";
 
-type ResponsiveSize = "s" | "m" | "l" | "xl";
-
-type BlendMode = "multiply"
+export type BlendMode = "multiply"
     | "screen"
     | "overlay"
     | "darken"
@@ -32,10 +28,8 @@ type BlendMode = "multiply"
     | "hue"
     | "saturation"
     | "color"
-    | "luminosity"
-    ;
-
-interface BackgroundProps extends HTMLAttributes<HTMLDivElement> {
+    | "luminosity";
+export interface BackgroundProps extends HTMLAttributes<HTMLDivElement> {
     color?: BackgroundColor;
     size?: BackgroundSize;
     position?: Position;

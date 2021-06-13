@@ -1,18 +1,12 @@
-import React from "react";
+import React, { HTMLAttributes } from "react";
 
-interface BadgeProps extends HTMLAttributes<HTMLDivElement> {}
+export interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
+}
 
-const Badge = React.forwardRef<HTMLDivElement, BadgeProps>((props, ref) => {
-  const {
-    children,
-    ...other
-  } = props;
-
-  return (
-    <div {...other} ref={ref} className="uk-badge">
-      {children}
-    </div>
-  );
-});
+const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(({ children, ...other }, ref) => (
+  <span {...other} ref={ref} className="uk-badge">
+    {children}
+  </span>
+));
 
 export default Badge;

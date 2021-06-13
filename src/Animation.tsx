@@ -19,6 +19,7 @@ export type AnimationType = "fade"
     | "kenburns"
     | "shake"
     | "stroke";
+
 export type TransformOrigin = "top-left"
     | "top-center"
     | "top-right"
@@ -27,7 +28,8 @@ export type TransformOrigin = "top-left"
     | "bottom-left"
     | "bottom-center"
     | "bottom-right";
-interface AnimationProps extends HTMLAttributes<HTMLDivElement> {
+
+export interface AnimationProps extends HTMLAttributes<HTMLDivElement> {
     type: AnimationType,
     reverse?: boolean,
     fast?: boolean,

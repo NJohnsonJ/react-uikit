@@ -2,7 +2,7 @@ import React, { HTMLAttributes } from "react";
 import ArticleMeta from "./ArticleMeta";
 import ArticleTitle from "./ArticleTitle";
 
-interface ArticleProps extends HTMLAttributes<HTMLElement> {
+export interface ArticleProps extends HTMLAttributes<HTMLElement> {
 }
 
 const Article = React.forwardRef<HTMLElement, ArticleProps>((props, ref) => {

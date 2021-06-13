@@ -1,6 +1,6 @@
 import React, { HTMLAttributes } from "react";
 
-interface ArticleMetaProps extends HTMLAttributes<HTMLParagraphElement> {
+export interface ArticleMetaProps extends HTMLAttributes<HTMLParagraphElement> {
 }
 
 const ArticleMeta = React.forwardRef<HTMLParagraphElement, ArticleMetaProps>(({ children, ...other }, ref) => (
