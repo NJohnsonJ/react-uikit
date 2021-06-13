@@ -16,5 +16,7 @@ export function className(prefix: string, name?: string) {
 }
 
 export function toClassName(classNames: string[]) {
-    return classNames.reduce((prev, curr) => `${prev} ${curr}`, "");
+    return classNames
+        .filter(it => it.length)
+        .reduce((prev, curr) => `${prev} ${curr}`, "");
 }

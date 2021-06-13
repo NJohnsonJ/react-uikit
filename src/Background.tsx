@@ -95,7 +95,7 @@ const Background = React.forwardRef<HTMLDivElement, BackgroundProps>((props, ref
     const style = { backgroundImage: image ? `url(${image})` : undefined }
 
     return (
-        <div {...other} ref={ref} className={toClassName(classNames)} style={style}>
+        <div {...other} ref={ref} className={toClassName(classNames) + " uk-panel"} style={style}>
             {children}
         </div>
     );
