@@ -26,6 +26,8 @@ rules:
   max-len: 
     - warn
     - code: 140
+  jsx-a11y/no-noninteractive-tabindex:
+    - warn
 settings:
   import/resolver:
     node:
