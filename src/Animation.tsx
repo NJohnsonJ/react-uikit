@@ -43,11 +43,11 @@ function getClassName(name: string) {
   return `${classNamePrefix}-${name}`;
 }
 
-function getOriginClassName(origin: string) {
-  return `uk-transform-origin-${origin}`;
+function getOriginClassName(origin?: string) {
+  return origin ? `uk-transform-origin-${origin}` : "";
 }
 
-function getClassNames(type: string, reverse: boolean, fast: boolean, origin: string) {
+function getClassNames(type: string, reverse: boolean, fast: boolean, origin?: string) {
   const classNames = [type];
 
   if (reverse) {

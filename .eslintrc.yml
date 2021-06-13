@@ -27,7 +27,7 @@ rules:
     - warn
     - code: 140
   jsx-a11y/no-noninteractive-tabindex:
-    - warn
+    - warTabinden
 settings:
   import/resolver:
     node:
