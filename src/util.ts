@@ -1,3 +1,11 @@
+import React, { ComponentPropsWithRef, ElementType } from "react";
+
+export interface AsProps<C extends ElementType> {
+    as?: C;
+}
+
+export type PolymorphicComponentProps<C extends ElementType, P = unknown> = React.PropsWithChildren<AsProps<C> & Omit<ComponentPropsWithRef<C>, keyof AsProps<C> & keyof P>>;
+
 type ConfigProps = Record<string, any>;
 
 export function ukConfig(props: ConfigProps): string {
