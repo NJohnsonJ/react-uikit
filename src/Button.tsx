@@ -10,13 +10,13 @@ export type ButtonColor = "default"
   | "link"
   ;
 
-export type ButtonSize = "small"
+export type Size = "small"
   | "large"
   ;
 
 export interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   color?: ButtonColor;
-  size?: ButtonSize;
+  size?: Size;
   width?: any; // TODO width component
 }
 
