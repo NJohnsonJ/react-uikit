@@ -1,5 +1,4 @@
 import React from "react";
-import { ukConfig } from "./util";
 import AlertButton from "./AlertButton";
 
 export interface AlertProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -16,7 +15,7 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
     ...other
   } = props;
 
-  const alertConfig = ukConfig({ animation, duration, variant });
+  const alertConfig = JSON.stringify({ animation, duration, variant });
 
   const styledClass = variant ? `uk-alert-${variant}` : "";
 

@@ -1,5 +1,4 @@
 import React from "react";
-import { ukConfig } from "./util";
 import AccordionContent from "./AccordionContent";
 
 export type Transition = "ease" | "ease-in" | "ease-in-out" | "ease-out";
@@ -33,7 +32,7 @@ const Accordion = React.forwardRef<HTMLUListElement, AccordionProps>((props, ref
     ...otherProps
   } = props;
 
-  const accordionConfig = ukConfig({
+  const accordionConfig = JSON.stringify({
     active, animation, collapsible, content, duration, multiple, targets, toggle, transition, offset,
   });
 
