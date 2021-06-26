@@ -40,3 +40,13 @@ export const Example = Template.bind({});
 Example.args = {
     primary: true
 }
+
+export const CommentList = () => (
+    <Comment.List>
+        <li><Template primary/></li>
+        <ul>
+            <li><Template /></li>
+            <li><Template /></li>
+        </ul>
+    </Comment.List>
+)
