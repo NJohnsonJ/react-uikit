@@ -11,7 +11,7 @@ export default {
     component: Close
 }
 
-export const Primary: Story<ComponentProps<typeof Close>> = () => (
+export const Example: Story<ComponentProps<typeof Close>> = () => (
     <Close />
 )
 
