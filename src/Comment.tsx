@@ -1,5 +1,5 @@
 import React, { ElementType } from "react";
-import { className, PolymorphicComponentProps, toClassName } from "./util";
+import { className, componentClassNames, PolymorphicComponentProps, toClassName } from "./util";
 
 export interface CommentProps {
     primary?: boolean;
@@ -7,19 +7,21 @@ export interface CommentProps {
 
 const prefix = "comment";
 
-const Comment = <C extends ElementType>(props: PolymorphicComponentProps<C, CommentProps>) => {
+const Comment = <C extends ElementType = "article">(props: PolymorphicComponentProps<C, CommentProps>) => {
 
     const {
         primary = false,
         as: Component = "article",
         children,
         ref,
+        ukComponents = [],
         ...other
     } = props;
     
     const classes = toClassName([
         `uk-${prefix}`,
-        className(prefix, primary ? "primary" : "")
+        className(prefix, primary ? "primary" : ""),
+        ...componentClassNames(ukComponents)
     ]);
 
     return (
@@ -29,17 +31,23 @@ const Comment = <C extends ElementType>(props: PolymorphicComponentProps<C, Comm
     );
 }
 
-const CommentComponent = (name: string, defaultAs: ElementType) => <C extends ElementType>(props: PolymorphicComponentProps<C, never>) => {
+const CommentComponent = (name: string, defaultAs: ElementType) => <C extends ElementType = typeof defaultAs>(props: PolymorphicComponentProps<C, never>) => {
 
     const {
         as: Component = defaultAs,
         children,
         ref,
+        ukComponents: ukComponent = [],
         ...other
     } = props;
 
+    const classes = toClassName([
+        className("comment", name),
+        ...componentClassNames(ukComponent)
+    ]);
+
     return (
-        <Component {...other} ref={ref} className={className("comment", name)}>
+        <Component {...other} ref={ref} className={classes}>
             {children}
         </Component>
     );
