@@ -35,6 +35,10 @@ export function toClassName(classNames: string[]) {
     .trim();
 }
 
+export function componentClassName(ukComponent?: string) {
+  return ukComponent ? `${ukPrefix}-${ukComponent}` : "";
+}
+
 export function componentClassNames(ukComponents: string[]) {
-  return ukComponents.map(component => `${ukPrefix}-${component}`);
+  return ukComponents.map(componentClassName);
 }
