@@ -8,7 +8,7 @@ export interface UkComponentProps {
   ukComponents?: string[];
 }
 
-export type PolymorphicComponentProps<C extends ElementType, P = unknown> = React.PropsWithChildren<AsProps<C> & UkComponentProps & Omit<ComponentPropsWithRef<C>, keyof AsProps<C> & keyof P & keyof UkComponentProps>>;
+export type PolymorphicComponentProps<C extends ElementType, P = unknown> = React.PropsWithChildren<AsProps<C> & P & UkComponentProps & Omit<ComponentPropsWithRef<C>, keyof AsProps<C> & keyof P & keyof UkComponentProps>>;
 
 type ConfigProps = Record<string, any>;
 

@@ -3208,6 +3208,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/uikit@npm:^3.3.1":
+  version: 3.3.1
+  resolution: "@types/uikit@npm:3.3.1"
+  checksum: 6e4eb65127971f8baee8885f534740d3fd2b5e0e02ec4e6c2f2c3962810bdc79fdb5f4fd2359a9e43aa67cd9ec46ed3198f7693d1dc2cc4114dd6749fb0f5849
+  languageName: node
+  linkType: hard
+
 "@types/unist@npm:*, @types/unist@npm:^2.0.0, @types/unist@npm:^2.0.2, @types/unist@npm:^2.0.3":
   version: 2.0.3
   resolution: "@types/unist@npm:2.0.3"
@@ -11679,6 +11686,7 @@ fsevents@^1.2.7:
     "@storybook/react": ^6.2.9
     "@types/node": ^15.6.1
     "@types/react": ^17.0.8
+    "@types/uikit": ^3.3.1
     "@typescript-eslint/eslint-plugin": 4.0.1
     "@typescript-eslint/parser": 4.0.0
     "@yarnpkg/pnpify": ^3.0.0-rc.3
