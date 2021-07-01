@@ -71,3 +71,6 @@ export type { CommentProps } from "./Comment";
 
 export { default as Container } from "./Container";
 export type { ContainerProps } from "./Container";
+
+export { default as Countdown } from "./Countdown";
+export type { CountdownProps } from "./Coundown";
