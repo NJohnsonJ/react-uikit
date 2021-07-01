@@ -55,7 +55,7 @@ export { default as CardBody } from "./CardBody";
 export type { CardBodyProps } from "./CardBody";
 
 export { default as CardTitle } from "./CardTitle";
-export type { CardTitleProps } from "./CardTitlte";
+export type { CardTitleProps } from "./CardTitle";
 
 export { default as Close } from "./Close";
 export type { CloseProps } from "./Close";
@@ -73,4 +73,4 @@ export { default as Container } from "./Container";
 export type { ContainerProps } from "./Container";
 
 export { default as Countdown } from "./Countdown";
-export type { CountdownProps } from "./Coundown";
+export type { CountdownProps } from "./Countdown";
