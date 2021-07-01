@@ -74,3 +74,6 @@ export type { ContainerProps } from "./Container";
 
 export { default as Countdown } from "./Countdown";
 export type { CountdownProps } from "./Countdown";
+
+export { default as Cover } from "./Cover";
+export type { CoverProps } from "./Cover";
