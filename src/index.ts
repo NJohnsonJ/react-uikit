@@ -80,3 +80,6 @@ export type { CoverProps } from "./Cover";
 
 export { default as DescriptionList } from "./DescriptionList";
 export type { DescriptionListProps } from "./DescriptionList";
+
+export { default as Divider } from "./Divider";
+export type { DividerProps } from "./Divider";

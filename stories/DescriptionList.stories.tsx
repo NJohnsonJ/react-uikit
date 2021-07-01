@@ -1,7 +1,7 @@
-import React, { ComponentProps, useMemo, useState } from "react";
+import { Story } from "@storybook/react";
+import React, { ComponentProps } from "react";
 import "uikit/dist/css/uikit.min.css";
 import "uikit/dist/js/uikit.min.js";
-import { Story } from "@storybook/react"
 import DescriptionList from "../src/DescriptionList";
 
 export default {
